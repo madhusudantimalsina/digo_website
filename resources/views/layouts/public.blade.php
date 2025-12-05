@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
     <meta charset="UTF-8">
-    <title>@yield('title') | Digo Coop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ asset('images/digologo.png') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('images/digologo.png') }}">
 
+    <title>@yield('title', 'Digo Coop')</title>
+
+    <!-- Bootstrap CSS (optional but recommended since you're using navbar classes) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    @stack('styles')
 </head>
 
 <body>
@@ -38,28 +43,35 @@
                            href="{{ route('notices.index') }}">Notices</a>
                     </li>
 
-<li class="nav-item">
-    <a class="nav-link {{ request()->routeIs('gallery.*') ? 'active' : '' }}" 
-       href="{{ route('gallery.index') }}">
-        Gallery
-    </a>
-</li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('gallery.*') ? 'active' : '' }}" 
+                           href="{{ route('gallery.index') }}">
+                            Gallery
+                        </a>
+                    </li>
 
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('financial.index') ? 'active' : '' }}" 
+                        <a class="nav-link {{ request()->routeIs('financial.*') ? 'active' : '' }}" 
                            href="{{ route('financial.index') }}">Financial Reports</a>
+                    </li>
+
+                    {{-- ⭐ BLOG LINK ADDED HERE --}}
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('blog.*') ? 'active' : '' }}"
+                           href="{{ route('blog.index') }}">
+                            Blog
+                        </a>
                     </li>
 
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('page.show') ? 'active' : '' }}" 
                            href="/page/about">About</a>
                     </li>
-                  <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('page.show') ? 'active' : '' }}" 
+
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}" 
                            href="{{ route('contact') }}">Contact</a>
                     </li>
-
-
 
                 </ul>
             </div>
@@ -74,7 +86,10 @@
     <footer class="bg-light text-center p-3 mt-5">
         <small>&copy; {{ date('Y') }} Digo Cooperative. All Rights Reserved.</small>
     </footer>
-    
 
+    <!-- Bootstrap JS Bundle (for navbar toggle etc.) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    @stack('scripts')
 </body>
 </html>

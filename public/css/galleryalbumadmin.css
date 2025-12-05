@@ -1,0 +1,687 @@
+/* =====================================
+   GALLERY ALBUM ADMIN PAGE STYLES
+   Matches Notice & Financial UI Style
+===================================== */
+
+/* Page Header */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.page-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1f2336;
+}
+
+.page-subtitle {
+    font-size: 14px;
+    color: #6c7280;
+}
+
+/* Card Wrapper */
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 20px 26px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+.card-header {
+    margin-bottom: 16px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2a2e43;
+}
+
+.card-subtitle {
+    font-size: 13px;
+    color: #7a7f8c;
+}
+
+/* Success Alert */
+.alert-success {
+    background: #ecfdf3;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+    padding: 10px 14px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+/* Table Wrapper */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 6px;
+}
+
+.table th {
+    padding: 12px 14px;
+    background: #f8f9ff;
+    color: #4a4f63;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #eef0f7;
+    font-size: 14px;
+}
+
+/* Cover Image */
+.cover-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 1px solid #e5e7eb;
+}
+
+/* Text Muted */
+.text-muted {
+    color: #6c7280;
+}
+
+/* Table Empty */
+.table-empty {
+    text-align: center;
+    padding: 20px;
+    color: #7a7f8c;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-table {
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s ease;
+    border: none;
+}
+
+.btn-view {
+    background: #eef2ff;
+    color: #4f46e5;
+}
+
+.btn-view:hover {
+    background: #e0e7ff;
+}
+
+.btn-edit {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.btn-edit:hover {
+    background: #fde68a;
+}
+
+.btn-delete {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.btn-delete:hover {
+    background: #fecaca;
+}
+
+/* Primary Button */
+.btn-primary {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    box-shadow: 0 6px 16px rgba(99,102,241,0.25);
+}
+
+/* ============================================
+   GALLERY ALBUM ADMIN UI (Professional Styling)
+============================================ */
+
+/* Page Header */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.page-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1f2336;
+}
+
+.page-subtitle {
+    font-size: 14px;
+    color: #6c7280;
+}
+
+/* Card Container */
+.card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+}
+
+/* Alerts */
+.alert-danger-custom {
+    background: #fde2e1;
+    border: 1px solid #f5c2c0;
+    color: #842029;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #2d3148;
+}
+
+.form-input,
+.form-textarea,
+.form-input-file {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #d0d5e1;
+    background: #fafbff;
+    font-size: 15px;
+    transition: all .25s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.18);
+    outline: none;
+}
+
+.form-textarea {
+    height: 120px;
+}
+
+/* Cover Image Preview */
+.cover-preview {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Notes */
+.note-text {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, #6366f1, #7c3aed);
+    padding: 10px 22px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 6px 16px rgba(99,102,241,0.35);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #e5e7eb;
+    padding: 10px 22px;
+    border-radius: 10px;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: .25s ease;
+}
+
+.btn-secondary:hover {
+    background: #d1d5db;
+}
+
+/* Actions Row */
+.form-actions {
+    margin-top: 25px;
+    display: flex;
+    gap: 12px;
+}
+
+
+/* ============================================
+   GALLERY ALBUM ADMIN UI (Professional Styling)
+============================================ */
+
+/* Page Header */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.page-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1f2336;
+}
+
+.page-subtitle {
+    font-size: 14px;
+    color: #6c7280;
+}
+
+/* Generic Card */
+.card {
+    background: #fff;
+    padding: 22px 24px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    margin-bottom: 20px;
+}
+
+/* Section titles inside cards */
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2a2e43;
+    margin-bottom: 4px;
+}
+
+.section-subtitle {
+    font-size: 13px;
+    color: #7a7f8c;
+    margin-bottom: 16px;
+}
+
+/* ====================
+   ALERTS / ERRORS
+==================== */
+
+.alert-danger-custom {
+    background: #fde2e1;
+    border: 1px solid #f5c2c0;
+    color: #842029;
+    padding: 10px 14px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+.alert-danger-custom ul {
+    margin: 4px 0 0;
+    padding-left: 18px;
+}
+
+/* ====================
+   FORM STYLING
+==================== */
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d3148;
+}
+
+.form-input,
+.form-textarea,
+.form-input-file {
+    width: 100%;
+    padding: 11px 13px;
+    border-radius: 10px;
+    border: 1px solid #d0d5e1;
+    background: #fafbff;
+    font-size: 14px;
+    transition: all .22s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.18);
+    outline: none;
+    background: #ffffff;
+}
+
+.form-textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.note-text {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* Form actions */
+.form-actions {
+    margin-top: 4px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* ====================
+   BUTTONS
+==================== */
+
+.btn-primary {
+    background: linear-gradient(135deg, #6366f1, #7c3aed);
+    padding: 10px 22px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: .25s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 6px 16px rgba(99,102,241,0.35);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #e5e7eb;
+    padding: 9px 18px;
+    border-radius: 10px;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid #d1d5db;
+    cursor: pointer;
+    transition: .2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-secondary:hover {
+    background: #d1d5db;
+}
+
+/* Small buttons for image actions */
+.btn-light {
+    padding: 6px 12px;
+    border-radius: 8px;
+    background: #eef2ff;
+    color: #4f46e5;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid #e0e7ff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.18s ease;
+}
+
+.btn-light:hover {
+    background: #e0e7ff;
+}
+
+.btn-danger-sm {
+    padding: 6px 12px;
+    border-radius: 8px;
+    background: #fee2e2;
+    color: #b91c1c;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid #fecaca;
+    cursor: pointer;
+    transition: 0.18s ease;
+}
+
+.btn-danger-sm:hover {
+    background: #fecaca;
+}
+
+/* ====================
+   TABLE STYLES (if reused for album list)
+==================== */
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 6px;
+}
+
+.table th {
+    padding: 12px 14px;
+    background: #f8f9ff;
+    color: #4a4f63;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #eef0f7;
+    font-size: 14px;
+}
+
+.cover-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 1px solid #e5e7eb;
+}
+
+.text-muted {
+    color: #6c7280;
+}
+
+.table-empty {
+    text-align: center;
+    padding: 20px;
+    color: #7a7f8c;
+}
+
+/* Action buttons in album list */
+.action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-table {
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.2s ease;
+    border: none;
+}
+
+.btn-view {
+    background: #eef2ff;
+    color: #4f46e5;
+}
+.btn-view:hover { background: #e0e7ff; }
+
+.btn-edit {
+    background: #fef3c7;
+    color: #b45309;
+}
+.btn-edit:hover { background: #fde68a; }
+
+.btn-delete {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+.btn-delete:hover { background: #fecaca; }
+
+/* ====================
+   IMAGE GRID
+==================== */
+
+.gallery-card {
+    margin-top: 6px;
+}
+
+.album-images-grid {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.image-card {
+    border-radius: 14px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 12px rgba(15,23,42,0.06);
+    display: flex;
+    flex-direction: column;
+}
+
+.image-card-thumb {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+}
+
+.image-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.image-card-body {
+    padding: 10px 12px 12px;
+}
+
+.image-card-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+.image-card-text {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 8px;
+}
+
+.image-card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ===========================================
+   NEW: COMPACT FORM STYLES (for upload form)
+=========================================== */
+
+/* Smaller, centered upload card */
+.compact-card {
+    max-width: 520px;
+    margin: 0 auto 25px auto;
+    padding: 18px 22px;
+}
+
+/* Slightly tighter gap between fields */
+.small-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Compact inputs */
+.compact-input,
+.compact-textarea,
+.compact-file {
+    padding: 9px 12px;
+    font-size: 14px;
+}
+
+/* Smaller textarea height */
+.compact-textarea {
+    height: 80px;
+}
+
+/* Slightly smaller bottom margin per form-group
+   Only affects when combined with compact layout */
+.compact-card .form-group {
+    margin-bottom: 12px;
+}
+
+/* Tighter subtitle for compact card */
+.compact-card .section-subtitle {
+    margin-bottom: 10px;
+}

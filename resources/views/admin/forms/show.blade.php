@@ -2,57 +2,95 @@
 
 @section('title', 'Form Details #'.$submission->id)
 
+{{-- Import CSS --}}
+@section('extra-css')
+<link rel="stylesheet" href="{{ asset('css/formdetails.css') }}">
+@endsection
+
 @section('content')
-    <h2>Form Details (ID: {{ $submission->id }})</h2>
 
-    @if(session('success'))
-        <div style="padding:10px; background:#d4edda; color:#155724; margin-bottom:15px;">
-            {{ session('success') }}
-        </div>
-    @endif
+<div class="page-header">
+    <div>
+        <h1 class="page-title">Form Details</h1>
+        <p class="page-subtitle">Submission ID: {{ $submission->id }}</p>
+    </div>
 
-    <table cellpadding="6" cellspacing="0">
+    <a href="{{ route('admin.form-submissions.index') }}" class="btn-secondary">
+        ← Back to All Forms
+    </a>
+</div>
+
+{{-- Success Message --}}
+@if(session('success'))
+    <div class="alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+<div class="card details-card">
+
+    <h3 class="section-title">Submitted Information</h3>
+
+    <table class="details-table">
         <tr>
-            <th align="left">Form:</th>
+            <th>Form</th>
             <td>{{ $submission->form?->name ?? 'Contact / Other' }}</td>
         </tr>
+
         <tr>
-            <th align="left">Full Name:</th>
+            <th>Full Name</th>
             <td>{{ $submission->full_name }}</td>
         </tr>
+
         <tr>
-            <th align="left">Email:</th>
+            <th>Email</th>
             <td>{{ $submission->email }}</td>
         </tr>
+
         <tr>
-            <th align="left">Message:</th>
-            <td>{{ $submission->message }}</td>
+            <th>Message</th>
+            <td class="message-cell">{{ $submission->message }}</td>
         </tr>
+
         <tr>
-            <th align="left">Status:</th>
-            <td>{{ ucfirst($submission->status) }}</td>
+            <th>Status</th>
+            <td>
+                <span class="badge 
+                    @if($submission->status == 'new') badge-yellow 
+                    @elseif($submission->status == 'seen') badge-blue
+                    @elseif($submission->status == 'processed') badge-green
+                    @else badge-gray @endif">
+                    {{ ucfirst($submission->status) }}
+                </span>
+            </td>
         </tr>
+
         <tr>
-            <th align="left">Submitted At:</th>
+            <th>Submitted At</th>
             <td>{{ $submission->created_at->format('Y-m-d H:i') }}</td>
         </tr>
     </table>
 
-    <h4 style="margin-top:20px;">Update Status</h4>
+</div>
 
-    <form action="{{ route('admin.form-submissions.status', $submission->id) }}" method="POST">
+{{-- UPDATE STATUS --}}
+<div class="card update-card">
+    <h3 class="section-title">Update Status</h3>
+
+    <form action="{{ route('admin.form-submissions.status', $submission->id) }}" method="POST" class="status-form">
         @csrf
 
-        <select name="status">
-            <option value="new" {{ $submission->status == 'new' ? 'selected' : '' }}>New</option>
-            <option value="seen" {{ $submission->status == 'seen' ? 'selected' : '' }}>Seen</option>
-            <option value="processed" {{ $submission->status == 'processed' ? 'selected' : '' }}>Processed</option>
-        </select>
+        <div class="form-group">
+            <label class="form-label">Select Status</label>
+            <select name="status" class="form-select">
+                <option value="new" {{ $submission->status == 'new' ? 'selected' : '' }}>New</option>
+                <option value="seen" {{ $submission->status == 'seen' ? 'selected' : '' }}>Seen</option>
+                <option value="processed" {{ $submission->status == 'processed' ? 'selected' : '' }}>Processed</option>
+            </select>
+        </div>
 
-        <button type="submit">Save</button>
+        <button type="submit" class="btn-primary">Save Status</button>
     </form>
+</div>
 
-    <p style="margin-top:20px;">
-        <a href="{{ route('admin.form-submissions.index') }}">← Back to all forms</a>
-    </p>
 @endsection

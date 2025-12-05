@@ -2,58 +2,142 @@
 
 @section('title', 'Edit Financial Report')
 
+{{-- Use the same financial styles --}}
+@section('extra-css')
+<link rel="stylesheet" href="{{ asset('css/financial.css') }}">
+@endsection
+
 @section('content')
-    <h2>Edit Financial Report</h2>
 
-    @if($errors->any())
-        <div style="background:#f8d7da; color:#721c24; padding:8px; margin-bottom:10px;">
-            <ul style="margin:0; padding-left:18px;">
-                @foreach($errors->all() as $e)
-                    <li>{{ $e }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+<div class="page-header">
+    <div>
+        <h1 class="page-title">Edit Financial Report</h1>
+        <p class="page-subtitle">Update the details of this financial document.</p>
+    </div>
 
+    <a href="{{ route('admin.financial-reports.index') }}" class="btn-secondary">
+        ← Back to Reports
+    </a>
+</div>
+
+{{-- Validation errors --}}
+@if($errors->any())
+    <div class="alert-error">
+        <strong>Please fix the following issues:</strong>
+        <ul>
+            @foreach($errors->all() as $e)
+                <li>{{ $e }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+<div class="card form-card-financial">
     <form action="{{ route('admin.financial-reports.update', $report->id) }}"
-          method="POST" enctype="multipart/form-data">
+          method="POST"
+          enctype="multipart/form-data"
+          class="form-wrapper">
         @csrf
         @method('PUT')
 
-        <div class="mb-3">
-            <label>Title *</label><br>
-            <input type="text" name="title" value="{{ old('title', $report->title) }}" style="width:100%;" required>
-        </div>
-
-        <div class="mb-3">
-            <label>Description</label><br>
-            <textarea name="description" rows="4" style="width:100%;">{{ old('description', $report->description) }}</textarea>
-        </div>
-
-        <div class="mb-3">
-            <label>Current File</label><br>
-            <a href="{{ $report->file_url }}" target="_blank">{{ $report->file_original_name }}</a>
-        </div>
-
-        <div class="mb-3">
-            <label>Change File (optional)</label><br>
-            <input type="file" name="file">
-        </div>
-
-        <div class="mb-3">
-            <label>Published Date</label><br>
-            <input type="date" name="published_at"
-                   value="{{ old('published_at', optional($report->published_at)->format('Y-m-d')) }}">
-        </div>
-
-        <div class="mb-3">
-            <label>
-                <input type="checkbox" name="is_active" value="1" {{ old('is_active', $report->is_active) ? 'checked' : '' }}>
-                Visible to public
+        {{-- Title --}}
+        <div class="form-section">
+            <label for="title" class="form-label">
+                Title <span class="required">*</span>
             </label>
+            <input
+                type="text"
+                id="title"
+                name="title"
+                class="form-input"
+                value="{{ old('title', $report->title) }}"
+                required
+            >
         </div>
 
-        <button type="submit">Update</button>
-        <a href="{{ route('admin.financial-reports.index') }}">Cancel</a>
+        {{-- Description --}}
+        <div class="form-section">
+            <label for="description" class="form-label">Description</label>
+            <textarea
+                id="description"
+                name="description"
+                rows="4"
+                class="form-textarea"
+                placeholder="Short description of this report..."
+            >{{ old('description', $report->description) }}</textarea>
+        </div>
+
+        {{-- Current file --}}
+        <div class="form-section">
+            <label class="form-label">Current File</label>
+
+            @if($report->file_url)
+                <div class="current-file-box">
+                    <span class="current-file-name">
+                        {{ $report->file_original_name }}
+                    </span>
+                    <a href="{{ $report->file_url }}" target="_blank" class="btn-file-view">
+                        View file
+                    </a>
+                </div>
+            @else
+                <p class="form-help">No file uploaded for this report.</p>
+            @endif
+        </div>
+
+        {{-- Replace file --}}
+        <div class="form-section">
+            <label for="file" class="form-label">Change File (optional)</label>
+            <p class="form-help">Upload a new file only if you want to replace the current one.</p>
+            <input
+                type="file"
+                id="file"
+                name="file"
+                class="form-file"
+            >
+        </div>
+
+        {{-- Grid: Published date + active --}}
+        <div class="form-grid-financial">
+
+            <div class="form-section">
+                <label for="published_at" class="form-label">Published Date</label>
+                <input
+                    type="date"
+                    id="published_at"
+                    name="published_at"
+                    class="form-input"
+                    value="{{ old('published_at', optional($report->published_at)->format('Y-m-d')) }}"
+                >
+            </div>
+
+            <div class="form-section">
+                <label class="form-label">Visibility</label>
+                <label class="form-checkbox-row">
+                    <input
+                        type="checkbox"
+                        name="is_active"
+                        value="1"
+                        {{ old('is_active', $report->is_active) ? 'checked' : '' }}
+                    >
+                    <span>Visible to public</span>
+                </label>
+            </div>
+
+        </div>
+
+        {{-- Buttons --}}
+        <div class="form-actions">
+            <a href="{{ route('admin.financial-reports.index') }}" class="btn-secondary">
+                Cancel
+            </a>
+
+            <button type="submit" class="btn-primary">
+                Update Report
+            </button>
+        </div>
+
     </form>
+</div>
+
 @endsection

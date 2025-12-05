@@ -12,6 +12,7 @@ class NoticeController extends Controller
     public function index()
     {
         $notices = Notice::orderBy('created_at', 'desc')->paginate(15);
+
         return view('admin.notices.index', compact('notices'));
     }
 
@@ -29,7 +30,6 @@ class NoticeController extends Controller
             'expires_at'  => 'nullable|date',
             'status'      => 'required|in:draft,published',
             'attachment'  => 'nullable|file|max:5120', // 5 MB
-            // You can restrict types further with:
             // 'attachment' => 'nullable|file|mimes:pdf,jpg,jpeg,png,doc,docx,txt|max:5120',
         ]);
 
@@ -46,15 +46,24 @@ class NoticeController extends Controller
 
             $path = $file->store('notices', 'public');
 
-            $notice->attachment_path           = $path;
-            $notice->attachment_original_name  = $file->getClientOriginalName();
-            $notice->attachment_mime           = $file->getClientMimeType();
+            $notice->attachment_path          = $path;
+            $notice->attachment_original_name = $file->getClientOriginalName();
+            $notice->attachment_mime          = $file->getClientMimeType();
         }
 
         $notice->save();
 
-        return redirect()->route('admin.notices.index')
+        return redirect()
+            ->route('admin.notices.index')
             ->with('success', 'Notice created successfully.');
+    }
+
+    /**
+     * Display a single notice (used by the View button).
+     */
+    public function show(Notice $notice)
+    {
+        return view('admin.notices.show', compact('notice'));
     }
 
     public function edit(Notice $notice)
@@ -88,14 +97,15 @@ class NoticeController extends Controller
             $file = $request->file('attachment');
             $path = $file->store('notices', 'public');
 
-            $notice->attachment_path           = $path;
-            $notice->attachment_original_name  = $file->getClientOriginalName();
-            $notice->attachment_mime           = $file->getClientMimeType();
+            $notice->attachment_path          = $path;
+            $notice->attachment_original_name = $file->getClientOriginalName();
+            $notice->attachment_mime          = $file->getClientMimeType();
         }
 
         $notice->save();
 
-        return redirect()->route('admin.notices.index')
+        return redirect()
+            ->route('admin.notices.index')
             ->with('success', 'Notice updated successfully.');
     }
 
@@ -107,7 +117,8 @@ class NoticeController extends Controller
 
         $notice->delete();
 
-        return redirect()->route('admin.notices.index')
+        return redirect()
+            ->route('admin.notices.index')
             ->with('success', 'Notice deleted successfully.');
     }
 }

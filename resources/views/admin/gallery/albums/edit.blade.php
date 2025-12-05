@@ -2,11 +2,26 @@
 
 @section('title', 'Edit Album: '.$album->name)
 
+{{-- IMPORT CSS --}}
+@section('extra-css')
+<link rel="stylesheet" href="{{ asset('css/galleryalbumadmin.css') }}">
+@endsection
+
 @section('content')
-    <h2>Edit Gallery Album</h2>
+
+<div class="page-header">
+    <div>
+        <h1 class="page-title">Edit Album</h1>
+        <p class="page-subtitle">Modify album details, description, or cover image.</p>
+    </div>
+
+    <a href="{{ route('admin.albums.index') }}" class="btn-secondary">← Back to Albums</a>
+</div>
+
+<div class="card form-card">
 
     @if($errors->any())
-        <div class="alert alert-danger">
+        <div class="alert-danger-custom">
             <ul>
                 @foreach ($errors->all() as $e)
                     <li>{{ $e }}</li>
@@ -15,43 +30,57 @@
         </div>
     @endif
 
-    <form action="{{ route('admin.albums.update', $album->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.albums.update', $album->id) }}"
+          method="POST"
+          enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
-        <div class="mb-3">
+        {{-- Album Name --}}
+        <div class="form-group">
             <label class="form-label">Album Name *</label>
             <input type="text"
                    name="name"
-                   class="form-control"
+                   class="form-input"
                    value="{{ old('name', $album->name) }}"
                    required>
         </div>
 
-        <div class="mb-3">
+        {{-- Description --}}
+        <div class="form-group">
             <label class="form-label">Description (optional)</label>
             <textarea name="description"
-                      class="form-control"
-                      rows="3">{{ old('description', $album->description) }}</textarea>
+                      rows="3"
+                      class="form-textarea">{{ old('description', $album->description) }}</textarea>
         </div>
 
-        <div class="mb-3">
-            <label class="form-label">Current Cover</label><br>
+        {{-- Current Cover --}}
+        <div class="form-group">
+            <label class="form-label">Current Cover</label>
+            
             @if($album->cover_image)
                 <img src="{{ asset('storage/'.$album->cover_image) }}"
-                     style="width:100px;height:100px;object-fit:cover;border:1px solid #ccc;">
+                     class="cover-preview">
             @else
-                <span>No cover image set.</span>
+                <p class="text-muted">No cover image uploaded.</p>
             @endif
         </div>
 
-        <div class="mb-3">
+        {{-- Upload new cover --}}
+        <div class="form-group">
             <label class="form-label">Change Cover Image (optional)</label>
-            <input type="file" name="cover_image" class="form-control">
-            <small class="form-text text-muted">Leave empty to keep existing cover image.</small>
+            <input type="file" name="cover_image" class="form-input-file">
+            <small class="note-text">Leave empty to keep existing cover image.</small>
         </div>
 
-        <button class="btn btn-primary">Update Album</button>
-        <a href="{{ route('admin.albums.index') }}" class="btn btn-secondary">Cancel</a>
+        {{-- Buttons --}}
+        <div class="form-actions">
+            <button class="btn-primary">Update Album</button>
+            <a href="{{ route('admin.albums.index') }}" class="btn-secondary">Cancel</a>
+        </div>
+
     </form>
+
+</div>
+
 @endsection

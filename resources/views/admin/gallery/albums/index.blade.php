@@ -2,59 +2,98 @@
 
 @section('title', 'Gallery Albums')
 
-@section('content')
-    <h2>Gallery Albums</h2>
+{{-- IMPORT CSS --}}
+@section('extra-css')
+<link rel="stylesheet" href="{{ asset('css/galleryalbumadmin.css') }}">
+@endsection
 
-    <a href="{{ route('admin.albums.create') }}" class="btn btn-primary mb-3">
+@section('content')
+
+<div class="page-header">
+    <div>
+        <h1 class="page-title">Gallery Albums</h1>
+        <p class="page-subtitle">Manage albums and images uploaded to the gallery.</p>
+    </div>
+
+    <a href="{{ route('admin.albums.create') }}" class="btn-primary">
         + Add New Album
     </a>
+</div>
+
+@if(session('success'))
+    <div class="alert-success">{{ session('success') }}</div>
+@endif
+
+<div class="card table-card">
+    <header class="card-header">
+        <h3 class="card-title">All Albums</h3>
+        <p class="card-subtitle">View, edit, or delete gallery albums.</p>
+    </header>
 
     @if($albums->count())
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Album</th>
-                    <th>Description</th>
-                    <th>Images</th>
-                    <th>Cover</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($albums as $album)
+        <div class="table-wrapper">
+            <table class="table">
+                <thead>
                     <tr>
-                        <td>{{ $album->name }}</td>
-                        <td>{{ $album->description }}</td>
-                        <td>{{ $album->images_count }}</td>
-                        <td>
-                            @if($album->cover_image)
-                                <img src="{{ asset('storage/'.$album->cover_image) }}"
-                                     style="width:60px;height:60px;object-fit:cover;">
-                            @else
-                                -
-                            @endif
-                        </td>
-                        <td>
-                            <a href="{{ route('admin.albums.show', $album->id) }}" class="btn btn-sm btn-info">
-                                Open
-                            </a>
-                            <a href="{{ route('admin.albums.edit', $album->id) }}" class="btn btn-sm btn-warning">
-                                Edit
-                            </a>
-                            <form action="{{ route('admin.albums.destroy', $album->id) }}"
-                                  method="POST"
-                                  style="display:inline-block;"
-                                  onsubmit="return confirm('Delete this album? All images will be deleted.');">
-                                @csrf
-                                @method('DELETE')
-                                <button class="btn btn-sm btn-danger">Delete</button>
-                            </form>
-                        </td>
+                        <th>Album</th>
+                        <th>Description</th>
+                        <th>Images</th>
+                        <th>Cover</th>
+                        <th class="text-right">Actions</th>
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
+                </thead>
+
+                <tbody>
+                    @foreach($albums as $album)
+                        <tr>
+                            <td>{{ $album->name }}</td>
+
+                            <td class="text-muted">
+                                {{ $album->description ?: '—' }}
+                            </td>
+
+                            <td>{{ $album->images_count }}</td>
+
+                            <td>
+                                @if($album->cover_image)
+                                    <img src="{{ asset('storage/'.$album->cover_image) }}"
+                                         class="cover-img">
+                                @else
+                                    <span class="text-muted">—</span>
+                                @endif
+                            </td>
+
+                            <td class="text-right">
+                                <div class="action-buttons">
+
+                                    <a href="{{ route('admin.albums.show', $album->id) }}"
+                                       class="btn-table btn-view">Open</a>
+
+                                    <a href="{{ route('admin.albums.edit', $album->id) }}"
+                                       class="btn-table btn-edit">Edit the album</a>
+
+                                    <form action="{{ route('admin.albums.destroy', $album->id) }}"
+                                          method="POST"
+                                          onsubmit="return confirm('Delete this album? All images will also be removed.')">
+                                        @csrf
+                                        @method('DELETE')
+
+                                        <button class="btn-table btn-delete">
+                                            Delete
+                                        </button>
+                                    </form>
+
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+
+            </table>
+        </div>
     @else
-        <p>No albums created yet.</p>
+        <p class="table-empty">No albums created yet.</p>
     @endif
+</div>
+
 @endsection

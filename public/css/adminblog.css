@@ -1,0 +1,1077 @@
+/* ===========================
+   BLOG ADMIN PAGE STYLING
+   Matches Entire Admin UI
+=========================== */
+
+/* Page Header */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.page-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1f2336;
+}
+
+.page-subtitle {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* Card */
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 22px 24px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    margin-bottom: 22px;
+}
+
+.card-header {
+    margin-bottom: 14px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2a2e43;
+}
+
+.card-subtitle {
+    font-size: 13px;
+    color: #6c7280;
+}
+
+/* Alert Success */
+.alert-success {
+    background: #ecfdf3;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Table */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 6px;
+}
+
+.table th {
+    padding: 12px 14px;
+    background: #f8f9ff;
+    font-size: 14px;
+    font-weight: 600;
+    color: #4a4f63;
+    text-align: left;
+}
+
+.table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 14px;
+    color: #111827;
+}
+
+/* Empty State */
+.table-empty {
+    text-align: center;
+    padding: 20px;
+    color: #6c7280;
+}
+
+/* Badges */
+.badge {
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-green {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.badge-gray {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, #6366f1, #7c3aed);
+    padding: 10px 22px;
+    border-radius: 10px;
+    color: #fff !important;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: .25s;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 6px 16px rgba(99,102,241,0.25);
+    transform: translateY(-2px);
+}
+
+/* Action Buttons Column */
+.actions-column {
+    text-align: right;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* Button Styles */
+.btn-table {
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    border: none;
+    transition: .2s ease;
+    font-weight: 500;
+}
+
+.btn-view {
+    background: #eef2ff;
+    color: #4f46e5;
+}
+.btn-view:hover { background: #e0e7ff; }
+
+.btn-edit {
+    background: #fef3c7;
+    color: #b45309;
+}
+.btn-edit:hover { background: #fde68a; }
+
+.btn-delete {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+.btn-delete:hover { background: #fecaca; }
+
+/* Pagination */
+.pagination-wrapper {
+    margin-top: 18px;
+}
+
+/* ============================
+   BLOG EDIT PAGE STYLING
+============================ */
+/* ===========================
+   BLOG ADMIN PAGE - SHARED
+=========================== */
+
+/* Page Header */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.page-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #1f2336;
+}
+
+.page-subtitle {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* Generic Card */
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 22px 24px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    margin-bottom: 22px;
+}
+
+.card-header {
+    margin-bottom: 14px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2a2e43;
+}
+
+.card-subtitle {
+    font-size: 13px;
+    color: #6c7280;
+}
+
+/* Success Alert */
+.alert-success {
+    background: #ecfdf3;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* ===========================
+   BLOG LIST TABLE
+=========================== */
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 6px;
+}
+
+.table th {
+    padding: 12px 14px;
+    background: #f8f9ff;
+    font-size: 14px;
+    font-weight: 600;
+    color: #4a4f63;
+    text-align: left;
+}
+
+.table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 14px;
+    color: #111827;
+}
+
+/* Empty State */
+.table-empty {
+    text-align: center;
+    padding: 20px;
+    color: #6c7280;
+}
+
+/* Badges */
+.badge {
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.badge-green {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.badge-gray {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+/* Main CTA Button */
+.btn-primary {
+    background: linear-gradient(135deg, #6366f1, #7c3aed);
+    padding: 10px 22px;
+    border-radius: 10px;
+    color: #fff !important;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: .25s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 6px 16px rgba(99,102,241,0.25);
+    transform: translateY(-2px);
+}
+
+/* Secondary Button */
+.btn-secondary {
+    padding: 10px 22px;
+    background: #e5e7eb;
+    color: #374151;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid #d1d5db;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.btn-secondary:hover {
+    background: #d1d5db;
+}
+
+/* Action Buttons Column */
+.actions-column {
+    text-align: right;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btn-table {
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    border: none;
+    transition: .2s ease;
+    font-weight: 500;
+}
+
+.btn-view {
+    background: #eef2ff;
+    color: #4f46e5;
+}
+.btn-view:hover { background: #e0e7ff; }
+
+.btn-edit {
+    background: #fef3c7;
+    color: #b45309;
+}
+.btn-edit:hover { background: #fde68a; }
+
+.btn-delete {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+.btn-delete:hover { background: #fecaca; }
+
+/* Pagination */
+.pagination-wrapper {
+    margin-top: 18px;
+}
+
+/* ===========================
+   BLOG EDIT PAGE
+=========================== */
+/* ==========================================
+   GLOBAL FONT + TYPOGRAPHY (modern UI)
+========================================== */
+
+* {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    letter-spacing: -0.2px;
+}
+
+body {
+    color: #1e1f25;
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+/* ==========================================
+   PAGE HEADER
+========================================== */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.page-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.page-subtitle {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* ==========================================
+   CARD WRAPPER
+========================================== */
+
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 26px 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    margin-bottom: 24px;
+}
+
+/* ==========================================
+   ERRORS
+========================================== */
+
+.alert-danger-custom {
+    background: #fde2e1;
+    border: 1px solid #f5c2c0;
+    color: #842029;
+    padding: 12px 18px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.alert-danger-custom ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+/* ==========================================
+   FORM STYLING
+========================================== */
+
+.form-card {
+    max-width: 1050px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.section-subtitle {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 18px;
+}
+
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.form-input,
+.form-textarea,
+.form-input-file {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    background: #f9fafb;
+    transition: .2s;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: #6366f1;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(99,102,241,.25);
+    outline: none;
+}
+
+.small-textarea {
+    min-height: 90px;
+}
+
+.large-textarea {
+    min-height: 200px;
+}
+
+/* ==========================================
+   IMAGE PREVIEW
+========================================== */
+
+.image-preview img {
+    width: 260px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    display: block;
+}
+
+/* ==========================================
+   META ROW (DATE + VISIBILITY)
+========================================== */
+
+.meta-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+/* Toggle Switch */
+.switch-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.switch-label input {
+    display: none;
+}
+
+.switch-pill {
+    width: 44px;
+    height: 24px;
+    background: #d1d5db;
+    border-radius: 999px;
+    position: relative;
+    transition: .2s;
+}
+
+.switch-pill::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 3px;
+    left: 3px;
+    background: white;
+    border-radius: 999px;
+    transition: .2s ease;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+}
+
+.switch-label input:checked + .switch-pill {
+    background: #6366f1;
+}
+
+.switch-label input:checked + .switch-pill::before {
+    transform: translateX(20px);
+}
+
+.switch-text {
+    font-size: 14px;
+    color: #374151;
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.btn-primary {
+    background: linear-gradient(135deg, #6366f1, #7c3aed);
+    padding: 11px 22px;
+    border-radius: 10px;
+    color: #fff !important;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 8px 20px rgba(99,102,241,0.35);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #e5e7eb;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #374151 !important;
+    font-size: 15px;
+    text-decoration: none;
+    border: 1px solid #d1d5db;
+    transition: .2s;
+}
+
+.btn-secondary:hover {
+    background: #d1d5db;
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+/* ===========================
+   Toast Success Popup
+=========================== */
+
+.toast {
+    position: fixed;
+    top: 18px;
+    right: 24px;
+    z-index: 9999;
+    min-width: 260px;
+    max-width: 360px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity .25s ease, transform .25s ease;
+}
+
+.toast.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.toast-success {
+    background: #ecfdf3;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+    box-shadow: 0 10px 25px rgba(22,101,52,0.18);
+}
+
+.toast-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    background: #22c55e;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.toast-message {
+    flex: 1;
+}
+/* ================================
+   Blog Form Styling
+================================ */
+/* ================================
+   Global font for this page only
+================================ */
+/* ================================
+   Global font (only when this CSS is loaded)
+================================ */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+/* ================================
+   Page Header
+================================ */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.page-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0;
+}
+
+.page-subtitle {
+    font-size: 14px;
+    color: #6b7280;
+    margin-top: 4px;
+}
+
+/* ================================
+   Buttons
+================================ */
+.btn-primary,
+.btn-secondary,
+.btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 18px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+/* Purple primary button */
+.btn-primary {
+    background: linear-gradient(135deg, #6366f1, #7c3aed);
+    color: #ffffff;
+    box-shadow: 0 8px 18px rgba(99, 102, 241, 0.25);
+}
+.btn-primary:hover {
+    background: linear-gradient(135deg, #4f46e5, #6d28d9);
+    transform: translateY(-1px);
+}
+
+/* Neutral header back button */
+.btn-secondary {
+    background: #eef2ff;
+    color: #4338ca;
+    border: 1px solid #c7d2fe;
+}
+.btn-secondary:hover {
+    background: #e0e7ff;
+}
+
+/* Ghost button for Cancel */
+.btn-ghost {
+    background: #f9fafb;
+    color: #4b5563;
+    border: 1px solid #d1d5db;
+}
+.btn-ghost:hover {
+    background: #e5e7eb;
+}
+
+/* ================================
+   Card Layout
+================================ */
+.card.form-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 24px 26px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    max-width: 1100px;
+    margin: 0 auto; /* center the card */
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 6px;
+}
+
+.section-subtitle {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 18px;
+}
+
+/* ================================
+   Error Box
+================================ */
+.alert-error {
+    max-width: 1100px;
+    margin: 0 auto 18px auto;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+    font-size: 14px;
+}
+.alert-error ul {
+    margin: 6px 0 0;
+    padding-left: 18px;
+}
+
+/* ================================
+   Form Layout
+================================ */
+.blog-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.required {
+    color: #ef4444;
+}
+
+/* Text inputs & textarea */
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    background: #f9fafb;
+    font-size: 15px;
+    color: #111827;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    border-color: #6366f1;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.16);
+}
+
+.form-textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+/* File input */
+.form-input-file {
+    padding: 6px;
+    font-size: 14px;
+}
+
+/* Two-column row for cover + date */
+.form-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 18px;
+}
+
+@media (max-width: 900px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Helper text */
+.note-text {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* Checkbox */
+.checkbox-group label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #374151;
+}
+.checkbox-group input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+}
+
+/* Actions */
+.form-actions {
+    margin-top: 6px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.header-btn {
+    white-space: nowrap;
+}
+
+.blog-show-card {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.blog-show-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.blog-label {
+    font-weight: 600;
+    color: #4b5563;
+}
+
+.blog-value {
+    color: #111827;
+}
+
+.blog-cover-wrapper {
+    margin-bottom: 18px;
+}
+
+.blog-cover-image {
+    width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.blog-section {
+    margin-bottom: 20px;
+}
+
+.blog-section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 6px;
+}
+
+.blog-section-text {
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+.blog-footer-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+/* ================================
+   BLOG DETAIL PAGE (ADMIN)
+================================ */
+
+/* Center the detail content and give it max width */
+.blog-detail-layout {
+    max-width: 1100px;
+    margin: 0 auto;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Reuse page-header but improve alignment for this page */
+.blog-detail-layout .page-header {
+    margin-bottom: 22px;
+}
+
+/* Header actions (Back, View) */
+.blog-detail-layout .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Main detail card */
+.blog-detail-card {
+    margin-top: 4px;
+    padding: 22px 24px 24px;
+}
+
+/* Meta row (status, dates, etc.) */
+.blog-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 18px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+}
+
+.blog-meta-row .meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 160px;
+}
+
+.meta-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #6b7280;
+    font-weight: 600;
+}
+
+.meta-value {
+    font-size: 14px;
+    color: #111827;
+}
+
+/* Cover image section */
+.blog-cover-wrapper {
+    margin-bottom: 18px;
+}
+
+.blog-cover-inner {
+    margin-top: 8px;
+}
+
+.blog-cover-image {
+    max-width: 360px;
+    border-radius: 14px;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.22);
+    display: block;
+}
+
+/* Body content section */
+.blog-body-wrapper {
+    margin-top: 12px;
+}
+
+.blog-body-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #111827;
+}
+
+.blog-body-content {
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #111827;
+    white-space: pre-wrap;
+}
+
+/* Slight typography polish for card title/subtitle on detail page */
+.blog-detail-card .card-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.blog-detail-card .card-subtitle {
+    font-size: 14px;
+    color: #6b7280;
+    margin-top: 6px;
+}

@@ -5,13 +5,14 @@ use Illuminate\Support\Facades\Route;
 // AUTH + ADMIN
 use App\Http\Controllers\Auth\AdminLoginController;
 use App\Http\Controllers\Admin\AdminDashboardController;
-use App\Http\Controllers\Admin\AdminPageController; // <- admin pages controller
+use App\Http\Controllers\Admin\AdminPageController;
 use App\Http\Controllers\Admin\NoticeController as AdminNoticeController;
 use App\Http\Controllers\Admin\FinancialReportController as AdminFinancialReportController;
 use App\Http\Controllers\Admin\GalleryAlbumController;
 use App\Http\Controllers\Admin\GalleryImageController;
 use App\Http\Controllers\Admin\FormController as AdminFormController;
 use App\Http\Controllers\Admin\FormSubmissionController;
+use App\Http\Controllers\Admin\BlogController as AdminBlogController;
 
 // PUBLIC
 use App\Http\Controllers\Public\PageController as PublicPageController;
@@ -19,6 +20,7 @@ use App\Http\Controllers\Public\NoticeController as PublicNoticeController;
 use App\Http\Controllers\Public\FinancialController as PublicFinancialController;
 use App\Http\Controllers\Public\GalleryController as PublicGalleryController;
 use App\Http\Controllers\Public\FormController as PublicFormController;
+use App\Http\Controllers\Public\BlogController as PublicBlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,7 +56,7 @@ Route::middleware('auth:admin')
             ->name('dashboard');
 
         // Pages management (Home, About, Services, Contact, etc.)
-        Route::resource('pages', AdminPageController::class);
+        // Route::resource('pages', AdminPageController::class);
 
         // Notices & Announcements
         Route::resource('notices', AdminNoticeController::class);
@@ -84,6 +86,9 @@ Route::middleware('auth:admin')
 
         Route::post('form-submissions/{id}/status', [FormSubmissionController::class, 'updateStatus'])
             ->name('form-submissions.status');
+
+        // ✅ Admin Blog CRUD (URLs like /admin/blogs, /admin/blogs/create, etc.)
+        Route::resource('blogs', AdminBlogController::class);
     });
 
 /*
@@ -135,3 +140,10 @@ Route::get('/contact', [PublicFormController::class, 'contact'])
 
 Route::post('/contact', [PublicFormController::class, 'submitContact'])
     ->name('contact.submit');
+
+// Blog (public)
+Route::get('/blog', [PublicBlogController::class, 'index'])
+    ->name('blog.index');
+
+Route::get('/blog/{slug}', [PublicBlogController::class, 'show'])
+    ->name('blog.show');
